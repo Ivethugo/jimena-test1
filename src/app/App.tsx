@@ -1,18 +1,27 @@
 import { useEffect } from "react";
+import { useAttendeeData } from "../store/attendee/useAttendeeData.ts";
+import { Preloading } from "../components/ui/Preloading.tsx";
 
 function App() {
+  const { setName } = useAttendeeData();
+
   useEffect(() => {
-    // Obtiene la cadena de consulta completa (incluye el signo '?')
     const query = window.location.search;
-    console.log("Query String:", query);
-
-    // Convierte la cadena de consulta en un objeto más manejable
     const params = new URLSearchParams(query);
-    const paramValue = params.get("nombre"); // Cambia 'miParametro' por el nombre del parámetro
-    console.log("Valor del parámetro:", paramValue);
-  }, []);
+    const name = params.get("nombre");
+    setName(name || "");
 
-  return <>Hola hugo</>;
+    console.log(name);
+  }, [setName]);
+
+  return (
+    <div className="w-screen h-screen relative">
+      <Preloading />
+      <div className="w-screen h-screen absolute top-0 left-0 text-3xl font-bold underline -z-1">
+        <h1>Hello world!</h1>
+      </div>
+    </div>
+  );
 }
 
 export default App;

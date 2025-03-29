@@ -1,6 +1,28 @@
-:root {
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Grey+Qo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-primary: oklch(0.811 0.111 293.571);
+  --color-deep-primary: oklch(0.283 0.141 291.089);
+  --color-secondary: oklch(0.828 0.189 84.429);
+
+  --secondary-color: #f5f3ff;
+  --bg-primary-color: oklch(0.969 0.016 293.756);
+  --bg-color: oklch(0.968 0.007 247.896);
+
+  --font-monteCarlo: "MonteCarlo", sans-serif;
+  --font-greyQo: "Grey Qo", sans-serif;
 }
 
-body {
-  margin: 0;
+:root {
+  background-color: var(--bg-primary-color);
+}
+
+.name {
+  @apply px-5 font-monteCarlo text-8xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-400;
 }
