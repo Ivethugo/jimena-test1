@@ -4,5 +4,5 @@ import react from "@vitejs/plugin-react";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "https://Ivethugo.github.io/jimena-text1",
+  base: "https://Ivethugo.github.io/jimena-test1",
 });
