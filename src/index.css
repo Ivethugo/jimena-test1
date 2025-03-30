@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Grey+Qo&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=MonteCarlo");
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap");
@@ -15,7 +15,7 @@
   --bg-primary-color: oklch(0.969 0.016 293.756);
   --bg-color: oklch(0.968 0.007 247.896);
 
-  --font-monteCarlo: "MonteCarlo", sans-serif;
+  --font-monteCarlo: "MonteCarlo";
   --font-greyQo: "Grey Qo", sans-serif;
 }
 

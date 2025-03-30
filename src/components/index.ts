@@ -1,2 +1,3 @@
-export { Preloading } from "./sections/Preloading.tsx";
-export { Welcome } from "./sections/Welcome.tsx";
+export { Preloading } from "./pages/Preloading.tsx";
+export { Welcome } from "./pages/Welcome.tsx";
+export { Invitation } from "./pages/Invitation.tsx";
