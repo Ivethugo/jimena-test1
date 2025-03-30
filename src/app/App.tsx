@@ -1,9 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAttendeeData } from "../store/attendee/useAttendeeData.ts";
-import { Preloading } from "../components/ui/Preloading.tsx";
+import { Preloading, Welcome } from "../components/index.ts";
 
 function App() {
   const { setName } = useAttendeeData();
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }, []);
 
   useEffect(() => {
     const query = window.location.search;
@@ -16,9 +22,9 @@ function App() {
 
   return (
     <div className="w-screen h-screen relative">
-      <Preloading />
-      <div className="w-screen h-screen absolute top-0 left-0 text-3xl font-bold underline -z-1">
-        <h1>Hello world!</h1>
+      {loading === true ? <Preloading /> : null}
+      <div className="w-screen h-screen absolute top-0 left-0 -z-1">
+        <Welcome />
       </div>
     </div>
   );
