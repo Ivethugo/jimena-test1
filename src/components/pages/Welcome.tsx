@@ -3,6 +3,7 @@ import Envright from "../../assets/images/env_right.png";
 import OpenButton from "../../assets/images/open_button.png";
 import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
 import { useOpenningTime } from "../../store/openning_time/useOpenningTime";
+import { NewModal } from "../index.ts";
 
 export function Welcome() {
   const control = useAnimationControls();
@@ -20,6 +21,7 @@ export function Welcome() {
 
   return (
     <>
+      <NewModal time={2500} />
       <AnimatePresence>
         <motion.div
           initial={{ opacity: 0 }}
