@@ -56,7 +56,7 @@ export function NewModal({ time, onConfirm }: NewModalProps) {
       }}
       footer={footerContent}
     >
-      <p className="m-0">¿Deseas eschar el sonido?</p>
+      <p className="m-0">¿Deseas escuchar el sonido?</p>
     </Dialog>
   );
 }
