@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Grey+Qo&display=swap");
+
 @import url("https://fonts.googleapis.com/css2?family=MonteCarlo");
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&display=swap");
@@ -9,20 +9,24 @@
 @theme {
   --color-primary: oklch(67.3% 0.182 276.935); /* Indigo 400 */
   --color-deep-primary: oklch(35.9% 0.144 278.697); /* Indigo 900 */
+  --color-primary-light: oklch(43.2% 0.232 292.759); /* Violet 500 */
   --color-secondary: #99711a;
 
   --secondary-color: #f5f3ff;
-  --bg-primary-color: oklch(0.969 0.016 293.756);
+
+  --color-bg-primary: oklch(96.9% 0.016 293.756);
   --bg-color: oklch(0.968 0.007 247.896);
 
   --font-monteCarlo: "MonteCarlo";
   --font-greyQo: "Grey Qo", sans-serif;
   --font-josefinSlab: "Josefin Slab", serif;
   --font-lora: "Lora", serif;
+  --font-cinzel: "Cinzel", serif;
+  --font-elsie: "Elsie", serif;
 }
 
 :root {
-  background-color: var(--bg-primary-color);
+  background-color: var(--color-bg-primary);
 }
 
 .name {

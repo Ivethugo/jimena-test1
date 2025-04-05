@@ -6,7 +6,7 @@ export function Navbar() {
   const [visible, setVisible] = useState(false);
 
   return (
-    <nav className="w-screen p-5">
+    <nav className="w-screen p-2 bg-bg-primary">
       <div className="container mx-auto flex justify-between lg:justify-center items-center">
         <div className="lg:w-60 xl:w-80 font-monteCarlo text-5xl text-primary lg:text-5xl">
           {import.meta.env.VITE_SHORT_NAME}
