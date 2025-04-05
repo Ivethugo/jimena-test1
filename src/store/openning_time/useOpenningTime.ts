@@ -13,8 +13,8 @@ interface TimePreloading {
 
 export const useOpenningTime = create<TimePreloading>((set) => ({
   timePreloading: 6000,
-  timeWelcome: 7500,
-  preloading: true,
+  timeWelcome: 500,
+  preloading: false,
   welcome: false,
   invitation: false,
   setPreloading: (preloading: boolean) => set(() => ({ preloading })),

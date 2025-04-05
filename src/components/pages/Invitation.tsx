@@ -1,7 +1,6 @@
+import { useOpenningTime } from "../../store/openning_time/useOpenningTime";
+
 export function Invitation() {
-  return (
-    <div>
-      <h1>Invitation</h1>
-    </div>
-  );
+  const { invitation } = useOpenningTime();
+  return <div>{invitation && <h1>Hola</h1>}</div>;
 }

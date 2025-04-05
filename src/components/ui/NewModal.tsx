@@ -2,12 +2,15 @@
 import { useEffect, useState } from "react";
 import { Button } from "primereact/button";
 import { Dialog } from "primereact/dialog";
+import { useAudio } from "../../store/audio/useAudio.ts";
 
 type NewModalProps = {
   time: number;
+  onConfirm?: () => void;
 };
-export function NewModal({ time }: NewModalProps) {
+export function NewModal({ time, onConfirm }: NewModalProps) {
   const [visible, setVisible] = useState(false);
+  const { setAudio } = useAudio();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -22,19 +25,27 @@ export function NewModal({ time }: NewModalProps) {
         label="No"
         severity="help"
         outlined
-        onClick={() => setVisible(false)}
+        onClick={() => {
+          setVisible(false);
+          onConfirm?.();
+        }}
       />
       <Button
         label="Yes"
         severity="help"
         outlined
-        onClick={() => setVisible(false)}
+        onClick={() => {
+          setVisible(false);
+          setAudio(true);
+          onConfirm?.();
+        }}
       />
     </div>
   );
 
   return (
     <Dialog
+      closable={false}
       header="Confirmación"
       visible={visible}
       style={{ width: "80vw" }}
