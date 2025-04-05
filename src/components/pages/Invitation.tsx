@@ -6,7 +6,7 @@ export function Invitation() {
   return (
     <>
       {invitation && (
-        <div className="w-screen h-screen flex flex-col gap-4">
+        <div className="w-screen h-screen flex flex-col gap-1">
           <div>
             <Navbar />
           </div>
