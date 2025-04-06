@@ -1,5 +1,13 @@
 import { useOpenningTime } from "../../store/openning_time/useOpenningTime";
-import { Begin, Introduce, Navbar, Place } from "../index.ts";
+import {
+  Attendee,
+  Begin,
+  Introduce,
+  Navbar,
+  Place,
+  Scheduler,
+  End,
+} from "../index.ts";
 
 export function Invitation() {
   const { invitation } = useOpenningTime();
@@ -19,9 +27,15 @@ export function Invitation() {
           <div>
             <Place />
           </div>
-          <div>Scheduler</div>
-          <div>Attendee</div>
-          <div>End</div>
+          <div>
+            <Scheduler />
+          </div>
+          <div>
+            <Attendee />
+          </div>
+          <div>
+            <End />
+          </div>
         </div>
       )}
     </>

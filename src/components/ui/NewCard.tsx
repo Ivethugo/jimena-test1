@@ -36,7 +36,7 @@ export function NewCard({
   location,
 }: CardProps) {
   const header = (
-    <div className="w-full p-5 font-lora text-2xl text-primary-light ">
+    <div className="w-full p-5 font-lora text-2xl text-deep-text  ">
       {title}
     </div>
   );
@@ -58,9 +58,7 @@ export function NewCard({
           />
         </div>
         <div className="flex flex-col gap-5 font-josefinSlab">
-          <h1 className="font-cinzel text-primary-light font-semibold">
-            {place}
-          </h1>
+          <h1 className="font-cinzel text-deep-text font-semibold">{place}</h1>
           <div className="flex flex-col justify-center items-center">
             <div>
               <span className="font-bold">{timeText} </span>

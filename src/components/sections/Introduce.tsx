@@ -7,7 +7,7 @@ export function Introduce() {
         className="w-full flex flex-col gap-5 py-28 bg-no-repeat bg-cover"
         style={{ backgroundImage: `url(${BackgroundImage})` }}
       >
-        <div className="font-elsie text-primary-light flex flex-col gap-10">
+        <div className="font-elsie text-deep-text  flex flex-col gap-10">
           <div className="flex flex-col justify-center items-center font-monteCarlo text-4xl text-violet900">
             <div>Con la bendición de Dios</div>
             <div>y en compañía de mis</div>

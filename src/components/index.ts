@@ -7,9 +7,14 @@ export { Navbar } from "./sections/Navbar.tsx";
 export { Begin } from "./sections/Begin.tsx";
 export { Introduce } from "./sections/Introduce.tsx";
 export { Place } from "./sections/Place.tsx";
+export { Scheduler } from "./sections/Scheduler.tsx";
+export { Attendee } from "./sections/Attendee.tsx";
+export { End } from "./sections/End.tsx";
 
 export { FlowersCircle } from "./ui/FlowersCircle.tsx";
 export { Countdown } from "./ui/Countdown.tsx";
 export { NewCard } from "./ui/NewCard.tsx";
+export { CardTimeline } from "./ui/CardTimeline.tsx";
+export { Timeline } from "./ui/Timeline.tsx";
 
 export { NewModal } from "./ui/NewModal.tsx";
