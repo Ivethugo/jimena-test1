@@ -3,7 +3,7 @@ import { useAttendeeData } from "../store/attendee/useAttendeeData.ts";
 import { Invitation, Preloading, Welcome, Audio } from "../components/index.ts";
 import { useOpenningTime } from "../store/openning_time/useOpenningTime.ts";
 
-function App() {
+export default function App() {
   const { setName } = useAttendeeData();
   const { invitation } = useOpenningTime();
 
@@ -23,5 +23,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

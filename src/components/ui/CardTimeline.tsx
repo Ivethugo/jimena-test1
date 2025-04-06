@@ -16,7 +16,7 @@ export function CardTimeline({
   text22,
 }: CardProps) {
   return (
-    <div className="w-full flex flex-col gap-10 font-cinzel text-violet900">
+    <div className="w-full flex flex-col gap-10 font-cinzel text-deep-primary">
       <div className="grid grid-cols-2">
         <div className="flex justify-center items-center">
           <img src={img1} alt={text1} className="w-16 h-16 timeline-icon" />

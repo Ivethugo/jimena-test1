@@ -1,4 +1,3 @@
-import { JSX } from "react";
 import { CardTimeline, Timeline } from "../index.ts";
 import GoldStarts from "../../assets/images/fondo-dorado-largo.png";
 import Church from "../../assets/svg/church.svg";
@@ -8,13 +7,16 @@ import Dinner from "../../assets/svg/dinner.svg";
 import Party from "../../assets/svg/party.svg";
 import End from "../../assets/svg/end.svg";
 
-export function Scheduler(): JSX.Element {
+export function Scheduler() {
   return (
     <div className="w-full flex flex-col justify-center items-center gap-12 pb-28 px-5 relative">
       <img src={GoldStarts} alt="GoldStarts" className="absolute top-0" />
       <div className="font-lora text-4xl text-deep-primary">Itinerario</div>
-      <div className="relative h-full">
-        <Timeline />
+      <div className="relative h-full w-full flex flex-col items-center">
+        <div className="absolute">
+          <Timeline />
+        </div>
+
         <div className="flex flex-col gap-10">
           <CardTimeline
             img1={Church}

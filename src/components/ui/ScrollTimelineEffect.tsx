@@ -1,36 +1,36 @@
-// Si este es tu componente ScrollRevealEffect, necesitas modificarlo así:
-import { useEffect, useRef, ReactNode } from "react";
 import { motion, useAnimation, Transition } from "framer-motion";
+import { ReactNode, useEffect, useRef } from "react";
 
-interface ScrollRevealEffectProps {
+interface ScrollTimelineEffectProps {
   children: ReactNode;
   rootMargin?: string;
   transition?: Transition;
-  direction?: "left" | "right" | "top" | "bottom";
 }
 
-export function ScrollRevealEffect({
+export function ScrollTimelineEffect({
   children,
-  rootMargin = "0px",
+  rootMargin = "-20% 0px",
   transition = { duration: 0.5 },
-  direction = "bottom",
-}: ScrollRevealEffectProps) {
-  const controls = useAnimation();
+}: ScrollTimelineEffectProps) {
   const ref = useRef<HTMLDivElement>(null);
+
+  const controls = useAnimation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
+        console.log("Intersection ratio:", entry.intersectionRatio);
+
         if (entry.isIntersecting) {
           controls.start("visible");
         } else {
-          controls.start("hidden"); 
+          controls.start("hidden");
         }
       },
       {
         root: null,
         rootMargin: rootMargin,
-        threshold: 0.2, 
+        threshold: 0.5,
       }
     );
 
@@ -49,14 +49,19 @@ export function ScrollRevealEffect({
       initial="hidden"
       animate={controls}
       variants={{
-        visible: { opacity: 1, x: 0, y: 0 },
+        visible: {
+          color: "oklch(35.9% 0.144 278.697)",
+          transition: { ...transition, ease: "easeOut" },
+        },
         hidden: {
-          opacity: 0,
-          x: direction === "left" ? -50 : direction === "right" ? 50 : 0,
-          y: direction === "top" ? -50 : direction === "bottom" ? 50 : 0,
+          color: "oklch(89.4% 0.057 293.283)",
+          transition,
         },
       }}
-      transition={transition}
+      style={{
+        willChange: "background-color color",
+        transition: "background-color color 0.5s ease-out",
+      }}
     >
       {children}
     </motion.div>

@@ -36,3 +36,10 @@
 .card-title {
   @apply pt-14 font-lora text-2xl text-deep-primary;
 }
+
+.transition-all {
+  transition-property: all;
+}
+.duration-1000 {
+  transition-duration: 1000ms;
+}

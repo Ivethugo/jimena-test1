@@ -35,20 +35,10 @@ export function Invitation() {
         <div className="w-screen h-screen flex flex-col overflow-y-auto relative">
           <motion.div
             animate={{
-              x: [
-                0,
-                Math.min(windowWidth * 0.15, 150), // 15% del ancho
-                Math.min(windowWidth * 0.25, 250), // 25% del ancho
-                windowWidth * 0.1,
-                50,
-                20,
-                90,
-                Math.min(windowWidth * 0.25, 250),
-                100,
-              ],
+              x: [10, 50, 200, 90, 100],
               y: [
-                0, 50, 100, 75, 25, 75, 100, 200, 300, 400, 500, 600, 700, 700,
-                600, 500, 700, 75, 25, 50, 0, 200, 150,
+                0, 100, 25, 200, 300, 400, 500, 600, 100, 700, 75, 25, 50, 0,
+                200, 150,
               ],
               rotate: [
                 0, 180, 360, 180, 0, 180, 360, 180, 0, 180, 360, 180, 0, 180,

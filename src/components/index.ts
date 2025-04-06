@@ -18,3 +18,4 @@ export { CardTimeline } from "./ui/CardTimeline.tsx";
 export { Timeline } from "./ui/Timeline.tsx";
 export { NewModal } from "./ui/NewModal.tsx";
 export { ScrollRevealEffect } from "./ui/ScrollRevealEffect.tsx";
+export { ScrollTimelineEffect } from "./ui/ScrollTimelineEffect.tsx";
