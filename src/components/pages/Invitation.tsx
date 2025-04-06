@@ -8,14 +8,74 @@ import {
   Scheduler,
   End,
 } from "../index.ts";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import Butterfly from "../../assets/gifs/butterfly-animation.gif";
 
 export function Invitation() {
   const { invitation } = useOpenningTime();
+  const [scrollY, setScrollY] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    const handleResize = () => setWindowWidth(window.innerWidth);
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       {invitation && (
-        <div className="w-screen h-screen flex flex-col">
-          <div className=" top-0 sticky z-50">
+        <div className="w-screen h-screen flex flex-col overflow-y-auto relative">
+          <motion.div
+            animate={{
+              x: [
+                0,
+                Math.min(windowWidth * 0.15, 150), // 15% del ancho
+                Math.min(windowWidth * 0.25, 250), // 25% del ancho
+                windowWidth * 0.1,
+                50,
+                20,
+                90,
+                Math.min(windowWidth * 0.25, 250),
+                100,
+              ],
+              y: [
+                0, 50, 100, 75, 25, 75, 100, 200, 300, 400, 500, 600, 700, 700,
+                600, 500, 700, 75, 25, 50, 0, 200, 150,
+              ],
+              rotate: [
+                0, 180, 360, 180, 0, 180, 360, 180, 0, 180, 360, 180, 0, 180,
+                360, 180, 0,
+              ],
+            }}
+            transition={{
+              repeat: Infinity,
+              repeatType: "reverse",
+              duration: 50,
+            }}
+            style={{
+              top: Math.min(32 + scrollY * 0.2, window.innerHeight - 150), // Reducir velocidad y límite inferior
+              right: Math.min(
+                Math.max(30, windowWidth * 0.65), // 15% mínimo desde la derecha
+                windowWidth * 0.85 // 15% máximo desde la izquierda (85% desde derecha)
+              ),
+            }}
+            className="fixed z-50"
+          >
+            <img
+              alt="Animated Butterfly "
+              src={Butterfly}
+              className="w-24 h-24"
+            />
+          </motion.div>
+          <div className="sticky top-0 z-50 w-full bg-white shadow-md">
             <Navbar />
           </div>
           <div>
