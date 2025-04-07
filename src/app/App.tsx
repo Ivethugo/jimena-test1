@@ -12,7 +12,9 @@ export default function App() {
     const query = window.location.search;
     const params = new URLSearchParams(query);
     const code = params.get("code");
+    console.log(code);
     const foundAttendee = data.find((attendee) => attendee.code === code);
+    console.log(foundAttendee);
     if (foundAttendee) {
       setCode(code || "");
       setName(foundAttendee.name || "");
