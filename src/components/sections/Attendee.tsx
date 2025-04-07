@@ -1,13 +1,20 @@
 import { Button } from "primereact/button";
 import BackgroundImage from "../../assets/images/bg-indigo-light-h.png";
+import { useAttendeeData } from "../../store/attendee/useAttendeeData.ts";
 
 export function Attendee() {
-  // const { name } = useAttendeeData();
+  const { name, tickets } = useAttendeeData();
 
   const sendMessage = () => {
     const phoneNumber = "522227160481";
     const message = encodeURIComponent(
-      "¡Hola! Este es un mensaje desde mi app React."
+      `🌟 *Confirmación de asistencia*  
+
+        👤 Nombre: *${name}*  
+        🎟️ Boletos asignados: ${tickets} 
+        🗓 Fecha: ${import.meta.env.VITE_DATE_STRING_CAPITAL} 
+
+*¡Gracias por la invitación! Nos vemos pronto.* 😊`
     );
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
@@ -19,20 +26,18 @@ export function Attendee() {
         style={{ backgroundImage: `url(${BackgroundImage})` }}
       >
         <div className="py-14 title">Asistencia</div>
-
         <div className="flex flex-col gap-24">
           <div className="flex flex-col justify-center items-center font-josefinSlab font-semibold">
             <div>Te pedimos confirmar tu asistencia</div>
-            <div>antes del 01 de julio</div>
+            <div>antes del 19 de junio</div>
           </div>
-
           <div className="flex flex-col items-center justify-center font-cinzel">
             <div>Hemos reservado</div>
-            <div>4</div>
+            <div>{tickets}</div>
             <div>boletos para tí</div>
           </div>
           <div className="flex items-center justify-center font-cinzel">
-            <div>Iveth Trujillo Vega</div>
+            <div>{name}</div>
           </div>
           <Button
             type="button"

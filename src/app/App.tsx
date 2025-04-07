@@ -5,18 +5,25 @@ import { useOpenningTime } from "../store/openning_time/useOpenningTime.ts";
 import data from "../assets/data/attendees.json";
 
 export default function App() {
-  const { setName } = useAttendeeData();
+  const { setCode, setName, setTickets } = useAttendeeData();
   const { invitation } = useOpenningTime();
 
   useEffect(() => {
     const query = window.location.search;
     const params = new URLSearchParams(query);
-    const name = params.get("nombre");
-    setName(name || "");
-    console.log(name);
-  }, [setName]);
-
-  console.log(data);
+    const code = params.get("code");
+    const foundAttendee = data.find((attendee) => attendee.code === code);
+    if (foundAttendee) {
+      setCode(code || "");
+      setName(foundAttendee.name || "");
+      setTickets(foundAttendee.tickets || 0);
+    } else {
+      setCode("");
+      setName("");
+      setTickets(0);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="w-screen h-screen relative">

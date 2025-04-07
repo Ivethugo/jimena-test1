@@ -1,27 +1,27 @@
 [
   {
-    "username": "nadiaberistain",
-    "fullName": "Nadia Beristain Aguilar",
-    "level": 2
+    "code": "nadiaberistain",
+    "name": "Nadia Beristain Aguilar",
+    "tickets": 2
   },
   {
-    "username": "gisellebarrera",
-    "fullName": "Giselle Sarahi Barrera Martinez",
-    "level": 3
+    "code": "gisellebarrera",
+    "name": "Giselle Sarahi Barrera Martinez",
+    "tickets": 3
   },
   {
-    "username": "juanbarrera",
-    "fullName": "Juan Barrera Carreto",
-    "level": 2
+    "code": "juanbarrera",
+    "name": "Juan Barrera Carreto",
+    "tickets": 2
   },
   {
-    "username": "irvinbarrera",
-    "fullName": "Irvin Omar Barrera Martinez",
-    "level": 3
+    "code": "irvinbarrera",
+    "name": "Irvin Omar Barrera Martinez",
+    "tickets": 3
   },
   {
-    "username": "hugobarrera",
-    "fullName": "Hugo Barrera Martinez",
-    "level": 3
+    "code": "hugobarrera",
+    "name": "Hugo Barrera Martinez",
+    "tickets": 3
   }
 ]
