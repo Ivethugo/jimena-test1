@@ -6,15 +6,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: oklch(67.3% 0.182 276.935); /* Indigo 400 */
-  --color-deep-primary: oklch(35.9% 0.144 278.697); /* Indigo 900 */
-  --color-primary-light: oklch(89.4% 0.057 293.283); /* Violet 200 */
-  --color-deep-text: oklch(54.1% 0.281 293.009); /* Violet 600 */
-  --color-secondary: #99711a;
+  --color-primary: oklch(87% 0.065 274.039); /* Indigo 200 */
+  --color-deep: hsl(255, 53%, 38%);
+  --color-mid: hsl(256, 60%, 58%);
+  --color-light: oklch(96.2% 0.018 272.314); /* Violet 200 */
+  --color-secondary: #ad8319;
 
-  --secondary-color: #f5f3ff;
+  --color-light-tl: var(--color-primary);
+  --color-deep-tl: var(--color-deep);
 
-  --color-bg-primary: oklch(96.9% 0.016 293.756);
+  --color-deep-text: var(--color-deep);
+
+  --color-bg: oklch(96.9% 0.016 293.756);
   --bg-color: oklch(0.968 0.007 247.896);
 
   --font-monteCarlo: "MonteCarlo";
@@ -26,20 +29,38 @@
 }
 
 :root {
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-bg);
+  scroll-behavior: smooth;
 }
 
-.name {
+html {
+  scroll-padding-top: 60px;
+}
+section[id] {
+  padding-top: 60px;
+  margin-top: -60px;
+}
+
+.name-preloader {
   @apply px-5 font-monteCarlo text-8xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-400;
 }
 
-.card-title {
-  @apply pt-14 font-lora text-2xl text-deep-primary;
+.name {
+  @apply font-monteCarlo text-6xl text-deep-text;
 }
 
-.transition-all {
-  transition-property: all;
+.title {
+  @apply font-elsie text-3xl text-deep-text;
 }
-.duration-1000 {
-  transition-duration: 1000ms;
+
+.card-title {
+  @apply p-3 font-lora text-2xl text-deep-text;
+}
+
+.card-mid-title {
+  @apply font-cinzel text-deep-text font-semibold;
+}
+
+.pi.pi-times {
+  color: var(--color-deep-primary) !important;
 }

@@ -67,7 +67,7 @@ export function Welcome() {
                   alt="Open Button"
                 />
                 <h1 className="w-full h-full absolute -top-0 font-monteCarlo text-5xl text-secondary">
-                  Open
+                  Abrir
                 </h1>
               </motion.button>
             </motion.div>

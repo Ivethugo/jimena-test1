@@ -24,13 +24,13 @@ export function ScrollRevealEffect({
         if (entry.isIntersecting) {
           controls.start("visible");
         } else {
-          controls.start("hidden"); 
+          controls.start("hidden");
         }
       },
       {
         root: null,
         rootMargin: rootMargin,
-        threshold: 0.2, 
+        threshold: 0.2,
       }
     );
 

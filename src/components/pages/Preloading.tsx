@@ -27,7 +27,9 @@ export function Preloading() {
             style={{ backgroundImage: `url(${ImageBackground})` }}
           >
             <div className="relative">
-              <h1 className="name">{import.meta.env.VITE_FIRST_NAME}</h1>
+              <h1 className="name-preloader">
+                {import.meta.env.VITE_FIRST_NAME}
+              </h1>
               <img
                 className="h-16 w-16 absolute  -top-7 right-1"
                 src={Butterfly}

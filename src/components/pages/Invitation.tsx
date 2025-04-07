@@ -68,24 +68,12 @@ export function Invitation() {
           <div className="sticky top-0 z-50 w-full bg-white shadow-md">
             <Navbar />
           </div>
-          <div>
-            <Begin />
-          </div>
-          <div>
-            <Introduce />
-          </div>
-          <div>
-            <Place />
-          </div>
-          <div>
-            <Scheduler />
-          </div>
-          <div>
-            <Attendee />
-          </div>
-          <div>
-            <End />
-          </div>
+          <Begin />
+          <Introduce />
+          <Place />
+          <Scheduler />
+          <Attendee />
+          <End />
         </div>
       )}
     </>

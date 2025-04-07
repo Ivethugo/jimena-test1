@@ -9,38 +9,46 @@ interface ScrollTimelineEffectProps {
 
 export function ScrollTimelineEffect({
   children,
-  rootMargin = "-20% 0px",
+  rootMargin = "-40% 0px",
   transition = { duration: 0.5 },
 }: ScrollTimelineEffectProps) {
   const ref = useRef<HTMLDivElement>(null);
-
   const controls = useAnimation();
+  const lastScrollY = useRef(window.scrollY);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        console.log("Intersection ratio:", entry.intersectionRatio);
+        const currentScrollY = window.scrollY;
+        const isScrollingDown = currentScrollY > lastScrollY.current;
 
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && isScrollingDown) {
           controls.start("visible");
-        } else {
+        } else if (!entry.isIntersecting || !isScrollingDown) {
           controls.start("hidden");
         }
+
+        lastScrollY.current = currentScrollY;
       },
       {
         root: null,
         rootMargin: rootMargin,
-        threshold: 0.5,
+        threshold: 0.9,
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
   }, [controls, rootMargin]);
 
   return (

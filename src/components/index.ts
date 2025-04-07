@@ -13,9 +13,9 @@ export { End } from "./sections/End.tsx";
 
 export { FlowersCircle } from "./ui/FlowersCircle.tsx";
 export { Countdown } from "./ui/Countdown.tsx";
-export { NewCard } from "./ui/NewCard.tsx";
 export { CardTimeline } from "./ui/CardTimeline.tsx";
 export { Timeline } from "./ui/Timeline.tsx";
 export { NewModal } from "./ui/NewModal.tsx";
 export { ScrollRevealEffect } from "./ui/ScrollRevealEffect.tsx";
 export { ScrollTimelineEffect } from "./ui/ScrollTimelineEffect.tsx";
+export { Card } from "./ui/Card.tsx";

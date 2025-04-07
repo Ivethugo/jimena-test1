@@ -8,7 +8,7 @@ export function FlowersCircle() {
         <div className="absolute top-30 font-lora font-semibold text-deep-primary">
           {import.meta.env.VITE_EVENT_NAME}
         </div>
-        <div className="absolute top-40 pr-10 font-monteCarlo text-6xl text-deep-primary">
+        <div className="absolute top-40 pr-10 name">
           {import.meta.env.VITE_FIRST_NAME}
         </div>
         <div className="absolute top-53 pt-10 font-lora font-semibold text-deep-primary">
