@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useAttendeeData } from "../store/attendee/useAttendeeData.ts";
 import { Invitation, Preloading, Welcome, Audio } from "../components/index.ts";
 import { useOpenningTime } from "../store/openning_time/useOpenningTime.ts";
-import data from "../assets/data/attendees.json";
+import { data } from "../data/attendees.ts";
 
 export default function App() {
   const { setCode, setName, setTickets } = useAttendeeData();
