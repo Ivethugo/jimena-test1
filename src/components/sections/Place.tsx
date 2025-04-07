@@ -44,7 +44,7 @@ export function Place() {
             timeText="Hora:"
             timeValue="8:30pm"
             addressText="Dirección:"
-            addressValue="Blurd Circunvalacíon B, Buganbilias"
+            addressValue="Blvrd Circunvalacíon B, Bugambilias"
             addressValue2="3ra secc, 72580"
             addressValue3="Puebla de Zaragoza, Pue."
             textButton="¿COMO LLEGAR?"

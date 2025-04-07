@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useAttendeeData } from "../store/attendee/useAttendeeData.ts";
 import { Invitation, Preloading, Welcome, Audio } from "../components/index.ts";
 import { useOpenningTime } from "../store/openning_time/useOpenningTime.ts";
+import data from "../assets/data/attendees.json";
 
 export default function App() {
   const { setName } = useAttendeeData();
@@ -14,6 +15,8 @@ export default function App() {
     setName(name || "");
     console.log(name);
   }, [setName]);
+
+  console.log(data);
 
   return (
     <div className="w-screen h-screen relative">
